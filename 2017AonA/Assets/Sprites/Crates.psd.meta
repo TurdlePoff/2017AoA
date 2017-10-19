@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: b9200f67fb51e7e4ebc50195677ad3f7
-timeCreated: 1508378016
+guid: 817a840d7ccfec94f9ad23e2c17d962b
+timeCreated: 1508371904
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Crates_0
-    21300002: Crates_1
-    21300004: Crates_2
+    21300000: crate_metal
+    21300002: crate_item
+    21300004: crate_weapon
+    21300006: Crates_0
+    21300008: Crates_1
+    21300010: Crates_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -15,8 +18,6 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
-    mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -32,13 +33,10 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    serializedVersion: 2
     filterMode: 0
     aniso: -1
     mipBias: -1
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -62,7 +60,7 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -70,7 +68,7 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -89,7 +87,6 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Crates_1
@@ -103,7 +100,6 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Crates_2
@@ -117,11 +113,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     outline: []
-    physicsShape: []
-  spritePackingTag: 50
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

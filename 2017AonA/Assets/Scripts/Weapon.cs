@@ -62,6 +62,7 @@ public class Weapon : MonoBehaviour {
         Debug.DrawLine(firePointPos, (mousePos - firePointPos) * 100, Color.cyan, 0.1f, true);
         if (hit.collider != null)
         {
+            //TODO:
             Debug.DrawLine(firePointPos, hit.point, Color.red, 0.1f, true);
             Debug.Log("We hit" + hit.collider.name + " and did " + Damage + " damage.");
         }

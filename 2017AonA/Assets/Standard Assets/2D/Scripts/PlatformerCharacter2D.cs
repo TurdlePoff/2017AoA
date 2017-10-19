@@ -32,9 +32,13 @@ namespace UnitySampleAssets._2D
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
             playerGraphics = transform.Find("Graphics");
+
             if(playerGraphics == null)
             {
-                Debug.LogError("Lets freak out! there is no 'Graphics' as a child of the player");
+                playerGraphics = transform.Find("Torso");
+                //playerGraphics = transform.Find("Torso");
+
+                //Debug.LogError("Lets freak out! there is no 'Graphics' as a child of the player");
             }
         }
 

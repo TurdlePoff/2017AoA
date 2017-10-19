@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: dffb6efed1ead144992853b00a721419
+timeCreated: 1508387688
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: P1_W_Musket
+    21300002: P1_W_Gatling
+    21300004: P1_W_Flintlock
+    21300006: P1_W_CrossBow
+    21300008: P1_W_Blunderbuss
+    21300010: P1_W_Revolver
+    21300012: P1_Jump2
+    21300014: P1_Jump1
+    21300016: P1_Crouch
+    21300018: P1_Idle
+    21300020: P1_Walk2
+    21300022: P1_Walk3
+    21300024: P1_torso
+    21300026: P1_Walk1
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 35
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1_W_Musket
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 458
+        width: 118
+        height: 38
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_W_Gatling
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 458
+        width: 118
+        height: 39
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_W_Flintlock
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 458
+        width: 101
+        height: 38
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_W_CrossBow
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 458
+        width: 93
+        height: 38
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_W_Blunderbuss
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 378
+        width: 103
+        height: 38
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_W_Revolver
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 378
+        width: 98
+        height: 38
+      alignment: 9
+      pivot: {x: 0.08335429, y: 0.7965016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Jump2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 292
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Jump1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 292
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Crouch
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 317
+        width: 50
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Idle
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 178
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Walk2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 179
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Walk3
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 179
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_torso
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 52
+        width: 45
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: P1_Walk1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 175
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
