@@ -12,7 +12,7 @@ namespace UnitySampleAssets._2D
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
         public float yPosRestriction = -1;
-        public float yCamPos = -51.87f;
+        public float yCamPos = -48.87f;
 
         private float offsetZ;
         private Vector3 lastTargetPosition;

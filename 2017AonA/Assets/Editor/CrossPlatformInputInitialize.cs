@@ -31,8 +31,7 @@ namespace UnitySampleAssets.CrossPlatformInput.Inspector
             {
                 case BuildTarget.Android:
                 //case BuildTarget.iPhone:
-                case BuildTarget.WP8Player:
-                case BuildTarget.BlackBerry:
+                case BuildTarget.WSAPlayer:
                     EditorUtility.DisplayDialog("Mobile Input",
                                                 "You have enabled Mobile Input. You'll need to use the Unity Remote app on a connected device to control your game in the Editor.",
                                                 "OK");
@@ -63,8 +62,7 @@ namespace UnitySampleAssets.CrossPlatformInput.Inspector
             {
                 case BuildTarget.Android:
                 //case BuildTarget.iPhone:
-                case BuildTarget.WP8Player:
-                case BuildTarget.BlackBerry:
+                case BuildTarget.WSAPlayer:
                     EditorUtility.DisplayDialog("Mobile Input",
                                                 "You have disabled Mobile Input. Mobile control rigs won't be visible, and the Cross Platform Input functions will always return standalone controls.",
                                                 "OK");
@@ -84,19 +82,15 @@ namespace UnitySampleAssets.CrossPlatformInput.Inspector
         private static BuildTargetGroup[] buildTargetGroups = new BuildTargetGroup[]
             {
                 BuildTargetGroup.Standalone,
-                BuildTargetGroup.WebPlayer,
+                BuildTargetGroup.WebGL,
                 BuildTargetGroup.Android,
-                //BuildTargetGroup.iPhone,
-                BuildTargetGroup.WP8,
-                BuildTargetGroup.BlackBerry,
+                BuildTargetGroup.WSA,
             };
 
         private static BuildTargetGroup[] mobileBuildTargetGroups = new BuildTargetGroup[]
             {
                 BuildTargetGroup.Android,
-                //BuildTargetGroup.iPhone,
-                BuildTargetGroup.WP8,
-                BuildTargetGroup.BlackBerry,
+                BuildTargetGroup.WSA,
             };
 
 

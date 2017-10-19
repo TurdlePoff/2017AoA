@@ -24,6 +24,9 @@ namespace UnitySampleAssets._2D
         private Animator anim; // Reference to the player's animator component.
 
         Transform playerGraphics;   //Reference to graphics so we can change direction
+        Transform playerTorso;   //Reference to graphics so we can change direction
+        //Transform playerLegs;   //Reference to graphics so we can change direction
+        //Transform playerArm;   //Reference to graphics so we can change direction
 
         private void Awake()
         {
@@ -32,10 +35,17 @@ namespace UnitySampleAssets._2D
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
             playerGraphics = transform.Find("Graphics");
+            playerTorso = transform.Find("Torso");
 
-            if(playerGraphics == null)
+            if (playerGraphics == null)
             {
-                playerGraphics = transform.Find("Torso");
+
+                //playerGraphics = transform.Find("Torso");
+
+                //playerTorso = transform.Find("Torso");
+                //playerLegs = transform.Find("Legs");
+                //playerArm = transform.Find("Arm");
+
                 //playerGraphics = transform.Find("Torso");
 
                 //Debug.LogError("Lets freak out! there is no 'Graphics' as a child of the player");
@@ -106,10 +116,21 @@ namespace UnitySampleAssets._2D
             // Switch the way the player is labelled as facing.
             facingRight = !facingRight;
 
-            // Multiply the player's x local scale by -1.
-            Vector3 theScale = playerGraphics.localScale;
-            theScale.x *= -1;
-            playerGraphics.localScale = theScale;
+            if(playerGraphics == null)
+            {
+
+                Vector3 theScales = playerTorso.localScale;
+                theScales.x *= -1;
+                playerTorso.localScale = theScales;
+            }
+            else
+            {
+                Vector3 theScale = playerGraphics.localScale;
+                theScale.x *= -1;
+                playerGraphics.localScale = theScale;
+
+            }
+
         }
     }
 }
