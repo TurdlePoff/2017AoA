@@ -58,6 +58,9 @@ public class Weapon : MonoBehaviour {
             Effect();
             timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
         }
+		//if (mousePos.x > firePointPos.x) { //Way to reverse fire line
+		//	Debug.DrawLine(firePointPos, -(mousePos - firePointPos) * 100, Color.cyan, 0.1f, true);
+		//}
         Debug.DrawLine(firePointPos, (mousePos - firePointPos) * 100, Color.cyan, 0.1f, true);
         if (hit.collider != null)
         {
