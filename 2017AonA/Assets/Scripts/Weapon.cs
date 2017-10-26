@@ -25,35 +25,34 @@ public class Weapon : MonoBehaviour {
             Debug.LogError("No fire point? WhaAAAAAAAT");
         }
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (fireRate == 0)
         {
-            if(Input.GetButtonDown("Fire1")) //Input.GetKeyDown(KeyCode.
+            if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
             }
         }
         else
         {
-            if (Input.GetButton("Fire1") && Time.time > timeToFire) //Input.GetKeyDown(KeyCode.
+            if (Input.GetButton("Fire1") && Time.time > timeToFire)
             {
-                timeToFire = Time.time + 1 / fireRate; //Time + delay (nxt time to fire) shoot.
+                timeToFire = Time.time + 1 / fireRate;
                 Shoot();
             }
         }
-	}
+    }
 
     void Shoot()
     {
-        //Debug.Log("Test");
-        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 
-                                       Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+                                      Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPos = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPos, mousePos - firePointPos, 100, whatToHit); //distance is the parameter of the shooting
-        if(Time.time >= timeToSpawnEffect)
+        if (Time.time >= timeToSpawnEffect)
         {
             //StartCoroutine("Effect");   //============IENUMERATOR
             Effect();
@@ -62,26 +61,39 @@ public class Weapon : MonoBehaviour {
         Debug.DrawLine(firePointPos, (mousePos - firePointPos) * 100, Color.cyan, 0.1f, true);
         if (hit.collider != null)
         {
-            //TODO:
-            Debug.DrawLine(firePointPos, hit.point, Color.red, 0.1f, true);
-            Debug.Log("We hit" + hit.collider.name + " and did " + Damage + " damage.");
+            Debug.DrawLine(firePointPos, hit.point, Color.red);
+            Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+            ButtonScript button = hit.collider.GetComponent<ButtonScript>();
+            if (button != null)
+            {
+                button.Switch(true);
+            }
         }
-
     }
-    //IEnumerator Effect()
-    void Effect()
-    {
-        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation); //What to spawn, position of spawn
 
-        //Create instant in which we want to store in a variable so different instances can be randomized and different each time
-        Transform clone = (Transform)Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation); //Want to change things on muzzle flash after instantiated
-        clone.parent = firePoint; //parent the clone to a firepoint
+    void Effect()//Vector3 hitPos, Vector3 hitNormal)
+    {
+        //Transform trail = Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation) as Transform;
+        //LineRenderer lr = trail.GetComponent<LineRenderer>();
+
+        //if (lr != null)
+        //{
+        //    lr.SetPosition(0, firePoint.position);
+        //    lr.SetPosition(1, hitPos);
+        //}
+
+        //Destroy(trail.gameObject, 0.04f);
+
+        //if (hitNormal != new Vector3(9999, 9999, 9999))
+        //{
+        //    Transform hitParticle = Instantiate(HitPrefab, hitPos, Quaternion.FromToRotation(Vector3.right, hitNormal)) as Transform;
+        //    Destroy(hitParticle.gameObject, 1f);
+        //}
+
+        Transform clone = Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
+        clone.parent = firePoint;
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
-        //Display for 1 single frame = yield return 0;
-        //yield return 0; //Requires function to be an IEnumerator //Waits a single frame
-        //Destroy(clone);
-        Destroy(clone.gameObject, 0.02f); //Must destroy the actual game object
-        //Display for multiple frames = 
+        Destroy(clone.gameObject, 0.02f);
     }
 }
