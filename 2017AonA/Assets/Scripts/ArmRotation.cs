@@ -24,7 +24,7 @@ public class ArmRotation : MonoBehaviour {
 
 		transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotOffset);
 
-		if (difference + rotOffset > 0) 
+		if (difference.x > 0) 
 		{
 			arm.flipY = false;
 		} else 
