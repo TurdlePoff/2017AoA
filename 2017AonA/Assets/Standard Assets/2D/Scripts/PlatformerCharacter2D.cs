@@ -115,8 +115,6 @@ namespace UnitySampleAssets._2D
             theScale.x *= -1;
             playerGraphics.localScale = theScale;
 			playerLegs.localScale = theScale;
-			playerArm.localScale = theScale;
-			playerArm.eulerAngles = theScale;
         }
     }
 }
