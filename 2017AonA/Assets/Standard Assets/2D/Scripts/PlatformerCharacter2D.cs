@@ -24,6 +24,8 @@ namespace UnitySampleAssets._2D
         private Animator anim; // Reference to the player's animator component.
 
         Transform playerGraphics;   //Reference to graphics so we can change direction
+		Transform playerLegs;   //Reference to graphics so we can change direction
+		Transform playerArm;   //Reference to graphics so we can change direction
 
         private void Awake()
         {
@@ -36,6 +38,8 @@ namespace UnitySampleAssets._2D
             if(playerGraphics == null)
             {
                 playerGraphics = transform.Find("Torso");
+				playerLegs = transform.Find("P1_Idle");
+				playerArm = transform.Find("Arm");
                 //playerGraphics = transform.Find("Torso");
 
                 //Debug.LogError("Lets freak out! there is no 'Graphics' as a child of the player");
@@ -110,6 +114,9 @@ namespace UnitySampleAssets._2D
             Vector3 theScale = playerGraphics.localScale;
             theScale.x *= -1;
             playerGraphics.localScale = theScale;
+			playerLegs.localScale = theScale;
+			playerArm.localScale = theScale;
+			playerArm.eulerAngles = theScale;
         }
     }
 }

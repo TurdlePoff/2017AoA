@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: dffb6efed1ead144992853b00a721419
-timeCreated: 1508982860
+timeCreated: 1508984762
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: P1_W_Musket
@@ -179,8 +180,8 @@ TextureImporter:
         y: 292
         width: 41
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.29, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,8 +194,8 @@ TextureImporter:
         y: 292
         width: 41
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.29, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,7 +251,7 @@ TextureImporter:
         width: 55
         height: 44
       alignment: 9
-      pivot: {x: 0.2, y: 0.5}
+      pivot: {x: 0.35, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +279,7 @@ TextureImporter:
         width: 55
         height: 46
       alignment: 9
-      pivot: {x: 0.2, y: 0.5}
+      pivot: {x: 0.35, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 2}
       outline: []
       physicsShape: []
