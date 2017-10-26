@@ -24,9 +24,14 @@ namespace UnitySampleAssets._2D
         private Animator anim; // Reference to the player's animator component.
 
         Transform playerGraphics;   //Reference to graphics so we can change direction
+<<<<<<< HEAD
         Transform playerTorso;   //Reference to graphics so we can change direction
         //Transform playerLegs;   //Reference to graphics so we can change direction
         //Transform playerArm;   //Reference to graphics so we can change direction
+=======
+		Transform playerLegs;   //Reference to graphics so we can change direction
+		Transform playerArm;   //Reference to graphics so we can change direction
+>>>>>>> master
 
         private void Awake()
         {
@@ -39,6 +44,7 @@ namespace UnitySampleAssets._2D
 
             if (playerGraphics == null)
             {
+<<<<<<< HEAD
 
                 //playerGraphics = transform.Find("Torso");
 
@@ -46,6 +52,11 @@ namespace UnitySampleAssets._2D
                 //playerLegs = transform.Find("Legs");
                 //playerArm = transform.Find("Arm");
 
+=======
+                playerGraphics = transform.Find("Torso");
+				playerLegs = transform.Find("P1_Idle");
+				playerArm = transform.Find("Arm");
+>>>>>>> master
                 //playerGraphics = transform.Find("Torso");
 
                 //Debug.LogError("Lets freak out! there is no 'Graphics' as a child of the player");
@@ -116,6 +127,7 @@ namespace UnitySampleAssets._2D
             // Switch the way the player is labelled as facing.
             facingRight = !facingRight;
 
+<<<<<<< HEAD
             if(playerGraphics == null)
             {
 
@@ -131,6 +143,15 @@ namespace UnitySampleAssets._2D
 
             }
 
+=======
+            // Multiply the player's x local scale by -1.
+            Vector3 theScale = playerGraphics.localScale;
+            theScale.x *= -1;
+            playerGraphics.localScale = theScale;
+			playerLegs.localScale = theScale;
+			playerArm.localScale = theScale;
+			playerArm.eulerAngles = theScale;
+>>>>>>> master
         }
     }
 }

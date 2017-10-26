@@ -37,5 +37,10 @@ public class GameMaster : MonoBehaviour {
         gm.StartCoroutine(gm.RespawnPlayer());
     }
 
-    
+    public static void SwitchButton(ButtonScript button)
+    {
+        Destroy(button.gameObject);
+    }
+
+
 }
