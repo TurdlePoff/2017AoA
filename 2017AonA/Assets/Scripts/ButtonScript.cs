@@ -4,26 +4,21 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
-
-    [System.Serializable]
-
+    Transform thisButton;
     public class ButtonStats
     {
         public bool switchedOn = false;
-
-        //public void KillPlayer();
     }
 
 
-    public ButtonStats buttonStats = new ButtonStats();
-    public int fallYBoundary = -20;
+    public ButtonStats stats = new ButtonStats();
     
     public void Switch(bool val)
     {
-        buttonStats.switchedOn = val;
-        if (buttonStats.switchedOn)
+        stats.switchedOn = val;
+        if (stats.switchedOn)
         {
-            GameMaster.SwitchButton(this);
+            //Destroy(gameObject);
         }
     }
 

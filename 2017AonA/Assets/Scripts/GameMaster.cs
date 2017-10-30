@@ -26,7 +26,6 @@ public class GameMaster : MonoBehaviour {
         yield return new WaitForSeconds(spawnDelay);
 
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-
         Transform spawnParticles = Instantiate(spawnPlayerPrefab, spawnPoint.position, spawnPoint.rotation);
         Destroy(spawnParticles.gameObject, 3f);
     }
@@ -35,11 +34,6 @@ public class GameMaster : MonoBehaviour {
     {
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());
-    }
-
-    public static void SwitchButton(ButtonScript button)
-    {
-        Destroy(button.gameObject);
     }
 
 
