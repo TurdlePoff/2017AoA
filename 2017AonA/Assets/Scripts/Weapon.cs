@@ -63,7 +63,7 @@ public class Weapon : MonoBehaviour {
         {
             Debug.DrawLine(firePointPos, hit.point, Color.red);
 
-            ButtonSwitcher bSwitch = hit.collider.GetComponent<ButtonSwitcher>();
+            ButtonSwitcher bSwitch = GameObject.FindGameObjectWithTag("RedSwitch").GetComponent<ButtonSwitcher>(); ;//hit.collider.GetComponent<ButtonSwitcher>();
 
             if (bSwitch != null)
             {
