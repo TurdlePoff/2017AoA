@@ -63,14 +63,11 @@ public class Weapon : MonoBehaviour {
         {
             Debug.DrawLine(firePointPos, hit.point, Color.red);
 
-            ButtonSwitcher bSwitch = GameObject.FindGameObjectWithTag("RedSwitch").GetComponent<ButtonSwitcher>(); ;//hit.collider.GetComponent<ButtonSwitcher>();
-
-            if (bSwitch != null)
-            {
-                bSwitch.switchedOn = true;
-
-                Debug.Log("We SWITCHED " + hit.collider.name + " and did " + Damage + " damage.");
-            }
+            
+            //    Destroy(buttoned);
+                
+            //    Debug.Log("We SWITCHED " + hit.collider.name + " and did " + Damage + " damage.");
+            //}
         }
 
         if (Time.time >= timeToSpawnEffect)
@@ -83,7 +80,23 @@ public class Weapon : MonoBehaviour {
         if (hit.collider != null)
         {
             Debug.DrawLine(firePointPos, hit.point, Color.red, 0.1f, true);
-            Debug.Log("We hit" + hit.collider.name + " and did " + Damage + " damage.");
+
+            ButtonSwitcher bSwitch = GameObject.FindGameObjectWithTag("RedSwitch").GetComponent<ButtonSwitcher>();
+            //hit.collider.GetComponent<ButtonSwitcher>();
+
+            if (hit.transform.gameObject.tag == "RedButton")
+            {
+                if (bSwitch.switchedOn)
+                {
+                    bSwitch.switchedOn = false;
+                }
+                else
+                {
+                    bSwitch.switchedOn = true;
+                }
+                Debug.Log("SWITCHED RED BUTTON: "+ (bSwitch.switchedOn ? "ON" : "OFF"));
+                //Debug.Log("SDFJKFH hit" + hit.collider.name + " and did " + Damage + " damage.");
+            }
         }
 
     }

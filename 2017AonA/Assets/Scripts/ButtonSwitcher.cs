@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ButtonSwitcher : MonoBehaviour {
 
+    private Vector3 startPos;
+
     private Vector3 endPos;
 
     [SerializeField]
-    private float speed;
+    private float speed = 2;
 
     [SerializeField]
     private Transform childTransform;
@@ -23,25 +25,27 @@ public class ButtonSwitcher : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        startPos = childTransform.localPosition;
         endPos = transformDest.localPosition;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (switchedOn)
-        {
-            Move();
-        }
-    }
-
-    public void Switch(bool val)
-    {
-        switchedOn = val;
+       Move();
     }
 
     void Move()
     {
-        childTransform.localPosition = Vector3.MoveTowards(childTransform.localPosition, endPos, speed * Time.deltaTime);
+        if(switchedOn)
+        {
+            childTransform.localPosition = Vector3.MoveTowards(endPos, startPos, speed * Time.deltaTime);
+
+        }
+        else
+        {
+            childTransform.localPosition = Vector3.MoveTowards(startPos, endPos, speed * Time.deltaTime);
+
+        }
     }
 }
