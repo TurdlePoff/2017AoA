@@ -8,6 +8,14 @@ TagManager:
   - GM
   - RedSwitch
   - RedButton
+  - BlueSwitch
+  - GreenSwitch
+  - BlueButton
+  - GreenButton
+  - Gate1Switch
+  - Gate2Switch
+  - Gate1Obj
+  - Gate2Obj
   layers:
   - Default
   - TransparentFX

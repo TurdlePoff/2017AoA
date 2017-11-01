@@ -32,7 +32,8 @@ public class ButtonSwitcher : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-       Move();
+        
+        Move();
     }
 
     void Move()
@@ -40,7 +41,6 @@ public class ButtonSwitcher : MonoBehaviour {
         if(switchedOn)
         {
             childTransform.localPosition = Vector3.MoveTowards(endPos, startPos, speed * Time.deltaTime);
-
         }
         else
         {
