@@ -27,21 +27,21 @@ public class WeaponScript : MonoBehaviour {
 
     void Shoot()
     {
-        //Raycast shoot
-        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
-                                      Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        ////Raycast shoot
+        //Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+        //                              Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         
-        Vector2 firePointPos = new Vector2(firePoint.position.x, firePoint.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, mousePos - firePointPos, 100, whatToHit, range);
-        if (hit.collider != null)
-        {
-            Debug.DrawLine(firePointPos, hit.point, Color.red);
+        //Vector2 firePointPos = new Vector2(firePoint.position.x, firePoint.position.y);
+        //RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, mousePos - firePointPos, 100, whatToHit, range);
+        //if (hit.collider != null)
+        //{
+        //    Debug.DrawLine(firePointPos, hit.point, Color.red);
 
 
-            //    Destroy(buttoned);
+        //    //    Destroy(buttoned);
 
-            //    Debug.Log("We SWITCHED " + hit.collider.name + " and did " + Damage + " damage.");
-            //}
-        }
+        //        Debug.Log("We SWITCHED " + hit.collider.name + " and did " + Damage + " damage.");
+        //    //}
+        //}
     }
 }

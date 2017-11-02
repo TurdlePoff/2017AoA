@@ -11,11 +11,18 @@ public class Weapon : MonoBehaviour {
     public Transform MuzzleFlashPrefab;
     public Transform HitPrefab;
 
+    public static GameMaster gm; //instance of gm
+
     float timeToSpawnEffect = 0f;
     public float effectSpawnRate = 10f;
 
     float timeToFire = 0f;
     Transform firePoint;
+
+    void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+    }
 
     // Use this for initialization
     void Awake ()
@@ -25,7 +32,7 @@ public class Weapon : MonoBehaviour {
         {
             Debug.LogError("No fire point? WhaAAAAAAAT");
         }
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -82,48 +89,10 @@ public class Weapon : MonoBehaviour {
             Debug.DrawLine(firePointPos, hit.point, Color.red, 0.1f, true);
             
             //hit.collider.GetComponent<ButtonSwitcher>();
-            ButtonSwitcher bSwitch = GameObject.FindGameObjectWithTag("BlueSwitch").GetComponent<ButtonSwitcher>();
-            GateSwitch gSwitch = GameObject.FindGameObjectWithTag("Gate1Switch").GetComponent<GateSwitch>(); ;
+          
             //GateSwitch gSwitch2 = GameObject.FindGameObjectWithTag("Gate2Switch").GetComponent<GateSwitch>(); ;
-
-            if (bSwitch != null || gSwitch != null )
-            {
-
-
-                switch (hit.transform.gameObject.tag)
-                {
-                    case "RedButton":
-                        {
-                            bSwitch = GameObject.FindGameObjectWithTag("RedSwitch").GetComponent<ButtonSwitcher>();
-                            WeaponSwitchButtons(bSwitch);
-
-                            break;
-                        }
-                    case "BlueButton":
-                        {
-                            bSwitch = GameObject.FindGameObjectWithTag("BlueSwitch").GetComponent<ButtonSwitcher>();
-                            WeaponSwitchButtons(bSwitch);
-                            if (!gSwitch.switchedOn)
-                            {
-                                gSwitch.blueSwitch = true;
-                                gSwitch.switchedOn = true;
-                            }
-                            else
-                            {
-                                gSwitch.blueSwitch = false;
-                                gSwitch.switchedOn = false;
-                            }
-
-                            break;
-                        }
-                    case "GreenButton":
-                        {
-                            bSwitch = GameObject.FindGameObjectWithTag("GreenSwitch").GetComponent<ButtonSwitcher>();
-                            WeaponSwitchButtons(bSwitch);
-                            break;
-                        }
-                }
-            }
+            GameMaster.ButtonGateHandler(hit);
+            
             //Debug.Log("SWITCHED RED BUTTON: "+ (bSwitch.switchedOn ? "ON" : "OFF"));
             //Debug.Log("SDFJKFH hit" + hit.collider.name + " and did " + Damage + " damage.");
         }
@@ -146,15 +115,5 @@ public class Weapon : MonoBehaviour {
         //Display for multiple frames = 
     }
 
-    void WeaponSwitchButtons(ButtonSwitcher bSwitch)
-    {
-        if (bSwitch.switchedOn)
-        {
-            bSwitch.switchedOn = false;
-        }
-        else
-        {
-            bSwitch.switchedOn = true;
-        }
-    }
+    
 }

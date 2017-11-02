@@ -54,8 +54,18 @@ public class GateSwitch : MonoBehaviour {
 
         //    }
         //}
-        
-            if (switchedOn && blueSwitch)
+
+        if (switchedOn && redSwitch)
+        {
+            childTransform.localPosition = Vector3.MoveTowards(endPos, startPos, speed * Time.deltaTime);
+        }
+        else
+        {
+            childTransform.localPosition = Vector3.MoveTowards(startPos, endPos, speed * Time.deltaTime);
+
+        }
+
+        if (switchedOn && blueSwitch)
             {
                 childTransform.localPosition = Vector3.MoveTowards(endPos, startPos, speed * Time.deltaTime);
             }

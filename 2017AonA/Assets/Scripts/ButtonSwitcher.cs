@@ -4,35 +4,43 @@ using UnityEngine;
 
 public class ButtonSwitcher : MonoBehaviour {
 
-    private Vector3 startPos;
-
-    private Vector3 endPos;
-
-    [SerializeField]
-    private float speed = 2;
-
+   //BUTTONS
     [SerializeField]
     private Transform childTransform;
-
     [SerializeField]
     private Transform transformDest;
-    
+
+    private Vector3 startPos;
+    private Vector3 endPos;
+
+    //GATE
+    [SerializeField]
+    private Transform childGate;
+    [SerializeField]
+    private Transform childGateDest;
+
+    private Vector3 gateStartPos;
+    private Vector3 gateEndPos;
+
+    //SHARED VARIABLES
+    [SerializeField]
+    private float speed = 2;
+    [SerializeField]
     public bool switchedOn;
-
-    //public ButtonStats stats = new ButtonStats();
-
 
     // Use this for initialization
     void Start ()
     {
         startPos = childTransform.localPosition;
         endPos = transformDest.localPosition;
+
+        gateStartPos = childGate.localPosition;
+        gateEndPos = childGateDest.localPosition;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
         Move();
     }
 
@@ -41,11 +49,12 @@ public class ButtonSwitcher : MonoBehaviour {
         if(switchedOn)
         {
             childTransform.localPosition = Vector3.MoveTowards(endPos, startPos, speed * Time.deltaTime);
+            childGate.localPosition = Vector3.MoveTowards(gateEndPos, gateStartPos, speed * Time.deltaTime);
         }
         else
         {
             childTransform.localPosition = Vector3.MoveTowards(startPos, endPos, speed * Time.deltaTime);
-
+            childGate.localPosition = Vector3.MoveTowards(gateStartPos, gateEndPos, speed * Time.deltaTime);
         }
     }
 }

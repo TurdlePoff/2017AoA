@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMaster : MonoBehaviour {
+public class GameMaster : MonoBehaviour
+{
 
     public static GameMaster gm; //instance of gm
 
     public void Start()
     {
-        if(gm == null)
+        if (gm == null)
         {
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         }
@@ -34,6 +35,49 @@ public class GameMaster : MonoBehaviour {
     {
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());
+    }
+    
+    public static void WeaponSwitchButtons(ButtonSwitcher bSwitch)
+    {
+        if (bSwitch.switchedOn)
+        {
+            bSwitch.switchedOn = false;
+        }
+        else
+        {
+            bSwitch.switchedOn = true;
+        }
+    }
+
+    public static void ButtonGateHandler(RaycastHit2D hit)
+    {
+        ButtonSwitcher bSwitch = GameObject.FindGameObjectWithTag("BlueSwitch").GetComponent<ButtonSwitcher>();
+        if (bSwitch != null) // || gSwitch != null 
+        {
+            switch (hit.transform.gameObject.tag)
+            {
+                case "RedButton":
+                {
+                    bSwitch = GameObject.FindGameObjectWithTag("RedSwitch").GetComponent<ButtonSwitcher>();
+                    WeaponSwitchButtons(bSwitch);
+
+                    break;
+                }
+                case "BlueButton":
+                {
+                    bSwitch = GameObject.FindGameObjectWithTag("BlueSwitch").GetComponent<ButtonSwitcher>();
+                    WeaponSwitchButtons(bSwitch);
+
+                    break;
+                }
+                case "GreenButton":
+                {
+                    bSwitch = GameObject.FindGameObjectWithTag("GreenSwitch").GetComponent<ButtonSwitcher>();
+                    WeaponSwitchButtons(bSwitch);
+                    break;
+                }
+            }
+        }
     }
 
 
