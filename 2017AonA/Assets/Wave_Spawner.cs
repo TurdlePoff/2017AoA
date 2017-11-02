@@ -22,8 +22,10 @@ public class Wave_Spawner : MonoBehaviour
 
 	private int nextWave =0; 
 
+	public Transform[] spawnPoints; 
+
 	public float timeBetweenWaves = 5f; 
-	public float wavecountdown; 
+	private float wavecountdown; 
 
 	private float searchCountdown = 1f; 
 
@@ -31,7 +33,10 @@ public class Wave_Spawner : MonoBehaviour
 
 	void Start ()
 	{
-
+		if (spawnPoints.Length == 0) 
+		{
+			Debug.LogError ("No spawnpoints referanced");
+		}
 		wavecountdown = timeBetweenWaves; 
 
 	}
@@ -47,7 +52,9 @@ public class Wave_Spawner : MonoBehaviour
 			{
 
 				//Begin a new round
-				//Debug.Log("wave Completed" 
+				//Debug.Log("wave Completed"); 
+				WaveCompleted();
+				return;
 			}
 			else
 			{
@@ -73,7 +80,7 @@ public class Wave_Spawner : MonoBehaviour
 	}
 
 
-	void WaceCompleted()
+	void WaveCompleted()
 	{
 
 		Debug.Log ("Wave Completed!"); 
@@ -109,7 +116,7 @@ public class Wave_Spawner : MonoBehaviour
 
 	IEnumerator SpawnWave (Wave _wave)
 	{
-		//				Debug.Log("Spawning wave: " + _wave.name
+		//Debug.Log("Spawning wave: " + _wave.name
 		//state = SpawnState.Spawning; 
 
 		//Spawn 
@@ -128,8 +135,10 @@ public class Wave_Spawner : MonoBehaviour
 
 	void SpawnEnemy(Transform _enemy)
 	{
-
 		Debug.Log ("Spawning enemy: " + _enemy.name); 
+
+		Transform _sp = spawnPoints [Random.Range (0, spawnPoints.Length)];
+		Instantiate (_enemy, _sp.position, _sp.rotation);
 
 	}
 

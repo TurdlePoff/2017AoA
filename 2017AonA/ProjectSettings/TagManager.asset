@@ -16,6 +16,8 @@ TagManager:
   - Gate2Switch
   - Gate1Obj
   - Gate2Obj
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
