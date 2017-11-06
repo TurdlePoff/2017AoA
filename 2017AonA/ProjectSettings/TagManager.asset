@@ -15,6 +15,7 @@ TagManager:
   - Gate1Switch
   - Gate2Switch
   - Enemy
+  - BreakableCrate
   layers:
   - Default
   - TransparentFX

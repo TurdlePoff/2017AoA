@@ -56,12 +56,13 @@ namespace UnitySampleAssets._2D
 
             //clamp camera when player falls below ground
 
-
             //TODO: THIS ALLOWS THE CAMERA TO FOLLOW THE PLAYER ON THE Y AXIS AS WELL.
-            //newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y+0.2f, yPosRestriction, Mathf.Infinity), newPos.z);
+            //newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y + 0.2f, yPosRestriction, Mathf.Infinity), newPos.z);
+
+            newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y + 0.2f, yPosRestriction, Mathf.Infinity), newPos.z);
 
             //THIS ALLOWS CAMERA TO FOLLOW THE PLAYER ON THE X AXIS BUT NOT THE Y.
-            newPos = new Vector3(newPos.x, Mathf.Clamp(yCamPos, yPosRestriction, Mathf.Infinity), newPos.z);
+            //newPos = new Vector3(newPos.x, Mathf.Clamp(yCamPos, yPosRestriction, Mathf.Infinity), newPos.z);
 
             transform.position = newPos;
             

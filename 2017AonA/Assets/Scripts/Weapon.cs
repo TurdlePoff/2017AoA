@@ -72,7 +72,6 @@ public class Weapon : MonoBehaviour {
 
             
             //    Destroy(buttoned);
-                
             //    Debug.Log("We SWITCHED " + hit.collider.name + " and did " + Damage + " damage.");
             //}
         }
@@ -92,10 +91,17 @@ public class Weapon : MonoBehaviour {
           
             //GateSwitch gSwitch2 = GameObject.FindGameObjectWithTag("Gate2Switch").GetComponent<GateSwitch>(); ;
             GameMaster.ButtonGateHandler(hit);
-            
-            //Debug.Log("SWITCHED RED BUTTON: "+ (bSwitch.switchedOn ? "ON" : "OFF"));
-            //Debug.Log("SDFJKFH hit" + hit.collider.name + " and did " + Damage + " damage.");
-        }
+            switch (hit.transform.gameObject.tag)
+            {
+                case "BreakableCrate":
+                {
+                    Destroy(hit.transform.gameObject);
+                    break;
+                }
+            }
+                //Debug.Log("SWITCHED RED BUTTON: "+ (bSwitch.switchedOn ? "ON" : "OFF"));
+                //Debug.Log("SDFJKFH hit" + hit.collider.name + " and did " + Damage + " damage.");
+            }
 
     }
     //IEnumerator Effect()
