@@ -50,7 +50,6 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collsion)
 	{
-
 		if (collsion.gameObject.layer == 13) //Spikes
 		{
 			DamagePlayer (9999999);

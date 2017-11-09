@@ -26,7 +26,7 @@ public class ButtonSwitcher : MonoBehaviour {
     [SerializeField]
     private float speed = 2;
     [SerializeField]
-    public bool switchedOn;
+    public bool switchedOn = false;
 
     // Use this for initialization
     void Start ()
